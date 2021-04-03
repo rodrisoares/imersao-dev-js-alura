@@ -1,0 +1,272 @@
+body {
+  font-family: 'Roboto Mono',monospace;
+  text-align:center;
+  background-image: url('https://www.alura.com.br/assets/img/imersoes/dev-2021/dia-04-aluraflix-e-filmes.png');
+  /*   background-image: url('https://analyticsindiamag.com/wp-content/uploads/2019/05/apps.55787.9007199266246365.687a10a8-4c4a-4a47-8ec5-a95f70d8852d.jpg'); */
+  background-color: #000000;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.modal-erro {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: fixed;
+  z-index: 97;
+  overflow: hidden;
+}
+
+.modal-erro span {
+  width: 300px;
+  height: 100px;
+  left: 0;
+  background: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 10px;
+  background-color: rgb(80,00,00,98%);
+  /*   animation: mostraDivErro 0.25s ease-in-out; */
+}
+
+.modal-video-geral {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  background-color: rgb(0,0,0,75%);
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  /*   cursor: no-drop; */
+}
+
+.modal-video-trailer {
+  position: absolute;
+  border-radius: 10px;
+  width: 600px;
+  height: 355px;
+}
+
+/* Botão Resumo */
+.modal-video-trailer button {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  z-index: 99;
+  cursor: pointer;
+}
+
+.modal-video-iframe {
+  width: 560px;
+  height: 315px;
+}
+
+.container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-opcoes {
+  margin: 15px 0 5px;
+  color: white;
+  font-size: 16px;
+}
+
+select {
+  width: 120px;
+  height: 25px;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 0 10px;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  outline: none!important;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+select option {
+  font-size: 15px;
+  margin: 5px;
+  outline: none!important;
+  color: black;
+  -webkit-appearance: none;
+}
+
+button {
+  width: 121px;
+  height: 25px;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  outline: none!important;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+.container-cadastro {
+  width: 300px;
+  height: 0;
+  border-radius: 10px;
+  color: white;
+  background-color: rgb(0,0,0,30%);
+  flex-direction: column;
+  align-items: center;
+  transition: all 1s ease-in-out;
+  overflow: hidden;
+  opacity: 0;
+  display: inline-flex;
+  position: relative;
+}
+
+.container-cadastro.ativo {
+  height: 430px;
+  opacity: 1;
+  transition: all 1s ease-in-out;
+  margin: 10px 0 5px;
+}
+
+fieldset {
+  border: 2px solid white;
+  border-radius: 5px;
+  position: absolute;
+}
+
+.container-cadastro input {
+  width: 226px;
+  height: 30px;
+  color: white;
+  font-size: 16px;
+  padding: 0 10px;
+  border-radius: 3px;
+  background-color: transparent;
+  border: 2px solid white;
+  outline: none!important; /*Remove a borda de quando clica no campo*/
+}
+
+input[type=number]::-webkit-inner-spin-button,  
+input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;}
+
+.container-cadastro-campo {
+  margin: 5px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.container-cadastro button {
+  margin: 5px 0 0;
+}
+
+.container-movies {
+  margin: 10px;
+  width: 200px;
+  font-size: 12px;
+  padding: 12px 5px;
+  color: white; /*Cor da fonte*/
+  display: inline-block;
+  border-radius: 10px;
+  background-color: rgb(0,0,0,30%);
+  cursor: pointer;
+  position: relative;
+}
+
+.container-movies h2 {
+  position: absolute; /*Funciona apenas com o position relative do elemento pai mais próximo*/
+  margin: 0;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+  opacity: 0;
+  background-color: rgb(0,0,0,75%);
+  transition: all 600ms ease-in-out;
+  padding: 0 10px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.container-movies:hover h2 {
+  opacity: 1;
+}
+
+
+
+.page-title {
+  color: #ffffff;
+  margin: 0 0 5px;
+}
+
+.page-subtitle {
+  color: #ffffff;
+  margin-top: 5px;
+}
+
+.page-logo {
+  width: 200px;
+}
+
+body > img {
+  margin: 0 10px;
+}
+
+.mostra-container-cadastro {
+  position: relative;
+  overflow: hidden;
+  transition: color 200ms ease-in-out;
+  /*   z-index: 1; */
+  /*   -webkit-transition: color 150ms ease-in-out; */
+}
+
+.mostra-container-cadastro:after {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 0;
+  height: 100%;
+  background: #0074bd;
+  z-index: -1;
+  -webkit-transition: width 200ms ease-out;
+  transition: width 200ms ease-out;
+}
+
+.mostra-container-cadastro:hover {
+  color: #FFF;
+}
+
+.mostra-container-cadastro:hover:after {
+  /* hove: passar o mouse em cima
+  after: após o mouse já estiver em cima   */
+  width: 110%;
+}
+
+.mostra-container-cadastro:active:after {
+  background-color: #0f55aa;
+}
